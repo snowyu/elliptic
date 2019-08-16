@@ -3,11 +3,7 @@ os:
   - linux
 language: node_js
 node_js:
-  - "0.10"
-  - "0.11"
-  - "0.12"
-  - "4"
-  - "5"
+  - "stable"
 env:
   global:
     - secure: ewqsRnX7z3+g6q+mM6peRPhuTlTlkJIRmVG/Ya9AcDXEb7as49KDTdqfMcOu7+FxF50ehqla+TRRCLRPOcVkWqs72OVUXEsjRASp9jQwpQGl+g/vZhyTMwlM2ENEkyiFQtobI1hYKgVW1ogftkc6vm7ywvoyTrFp/leVJBrTuHk=
@@ -17,11 +13,11 @@ env:
     - TEST_SUITE='npm run unit'
 matrix:
   include:
-    - node_js: "4"
+    - node_js: "stable"
       env: TEST_SUITE='npm run lint'
-    - node_js: "4"
+    - node_js: "stable"
       env: TEST_SUITE='grunt coveralls'
-    - node_js: "4"
+    - node_js: "stable"
       env: TEST_SUITE='grunt saucelabs'
   allow_failures:
     - env: TEST_SUITE='grunt saucelabs'
